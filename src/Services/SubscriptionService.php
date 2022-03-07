@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Recharge\Services;
 
-use Recharge\Discount;
 use Recharge\Collection;
+use Recharge\Subscription;
 
 class SubscriptionService extends AbstractService
 {
@@ -16,8 +16,13 @@ class SubscriptionService extends AbstractService
         return $this->requestCollection('get', 'subscriptions', $params, self::OBJECT_TYPE);
     }
 
-    public function retrieve($id): Discount
+    public function retrieve($id): Subscription
     {
         return $this->request('get', $this->buildPath('/subscriptions/%s', $id), [], self::OBJECT_TYPE);
+    }
+
+    public function cancel($id): Subscription
+    {
+        return $this->request('post', $this->buildPath('/subscriptions/%s/cancel', $id), [], self::OBJECT_TYPE);
     }
 }
