@@ -10,6 +10,7 @@ namespace Recharge\Services;
 class ServiceFactory extends AbstractServiceFactory
 {
     private static array $classMap = [
+        'address' => AddressService::class,
         'customer' => CustomerService::class,
         'charge' => ChargeService::class,
         'discount' => DiscountService::class,

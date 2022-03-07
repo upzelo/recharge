@@ -13,10 +13,12 @@ use Recharge\Customer;
 use Recharge\Discount;
 use Recharge\Collection;
 use Recharge\Subscription;
+use Recharge\Address;
 
 class ObjectTypes
 {
     public const MAPPING = [
+        Address::OBJECT_NAME => Address::class,
         Customer::OBJECT_NAME => Customer::class,
         Collection::OBJECT_NAME => Collection::class,
         Charge::OBJECT_NAME => Charge::class,

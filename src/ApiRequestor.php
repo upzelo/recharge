@@ -31,6 +31,7 @@ class ApiRequestor
 
         $response = match ($method) {
             'post' => $this->httpClient()->post($url, ['json' => $params]),
+            'put' => $this->httpClient()->put($url, ['json' => $params]),
             default => $this->httpClient()->get($url, ['query' => $params]),
         };
 
