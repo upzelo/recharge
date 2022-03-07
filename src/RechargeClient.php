@@ -10,11 +10,13 @@ use Recharge\Services\ChargeService;
 use Recharge\Services\ServiceFactory;
 use Recharge\Services\ProductService;
 use Recharge\Services\WebhookService;
+use Recharge\Services\AddressService;
 use Recharge\Services\CustomerService;
 use Recharge\Services\DiscountService;
 use Recharge\Services\SubscriptionService;
 
 /**
+ * @property AddressService      $address
  * @property CustomerService     $customer
  * @property ChargeService       $charge
  * @property DiscountService     $discount

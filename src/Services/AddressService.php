@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Recharge\Services;
 
-use Recharge\Address\Address;
+use Recharge\Address;
 
 class AddressService extends AbstractService
 {

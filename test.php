@@ -34,4 +34,6 @@ $client = new \Recharge\RechargeClient('sk_1x1_adbdf25d28b7ab3b5c088241b61af7265
 //     'value' => '10',
 // ]));
 
+dd($client->address->retrieve(89187588));
+
 dd($client->charge->all(['customer_id' => 82377107, 'status' => 'queued']));
