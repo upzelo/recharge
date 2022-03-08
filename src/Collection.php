@@ -21,7 +21,6 @@ class Collection extends RechargeObject implements \Countable, \IteratorAggregat
     use Request;
     public const OBJECT_NAME = 'list';
 
-    public array $data = [];
     protected array $filters = [];
 
     public function __construct($id = null)

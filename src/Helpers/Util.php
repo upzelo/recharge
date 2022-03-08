@@ -134,6 +134,7 @@ abstract class Util
         }
         if (\is_array($resp)) {
             $class = $types[$resp['object'] ?? null] ?? RechargeObject::class;
+
             return $class::constructFrom($resp);
         }
 

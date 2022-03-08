@@ -29,7 +29,7 @@ abstract class AbstractService
 
     protected function requestCollection($method, $path, $params, string $objectType)
     {
-        return $this->getClient()->requestCollection($method, $path, $params, $objectType, true);
+        return $this->getClient()->requestCollection($method, $path, $params, $objectType);
     }
 
     protected function buildPath(string $basepath, ...$ids): string
