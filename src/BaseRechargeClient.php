@@ -44,14 +44,14 @@ class BaseRechargeClient implements RechargeClientInterface
         return $this->config['client_id'];
     }
 
-    public function getApiBase(): mixed
+    public function getApiBase(): ?string
     {
         return $this->config['api_base'];
     }
 
     public function request($method, $path, $params, string $objectType, bool $isList = false)
     {
-        $baseUrl = $this->getApiBase()->value;
+        $baseUrl = $this->getApiBase();
 
         $requestor = new ApiRequestor($this->getApiKey(), $baseUrl, $this->config);
         $response = $requestor->request($method, $path, $params);
@@ -112,7 +112,7 @@ class BaseRechargeClient implements RechargeClientInterface
     }
 
     /**
-     * @return array<string, string|RechargeEnum::DEFAULT_API_VERSION|RechargeEnum::DEFAULT_API_BASE|null>
+     * @return array<string, string|null>
      */
     private function getDefaultConfig(): array
     {

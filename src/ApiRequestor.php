@@ -26,6 +26,7 @@ class ApiRequestor
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
                 'X-Recharge-Version' => $this->config['recharge_version'],
+                ...$headers,
             ],
         ]);
 
