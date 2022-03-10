@@ -119,8 +119,8 @@ class BaseRechargeClient implements RechargeClientInterface
         return [
             'api_key' => null,
             'client_id' => null,
-            'recharge_version' => RechargeEnum::DEFAULT_API_VERSION,
-            'api_base' => RechargeEnum::DEFAULT_API_BASE,
+            'recharge_version' => RechargeEnum::DEFAULT_API_VERSION->value,
+            'api_base' => RechargeEnum::DEFAULT_API_BASE->value,
         ];
     }
 
