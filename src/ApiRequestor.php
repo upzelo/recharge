@@ -10,7 +10,7 @@ class ApiRequestor
 {
     private static ?Client $httpClient = null;
 
-    public function __construct(private string $apiKey, private string $apiBase)
+    public function __construct(private string $apiKey, private string $apiBase, private array $config)
     {
     }
 
@@ -25,7 +25,7 @@ class ApiRequestor
                 'Authorization' => 'Bearer ' . $this->apiKey,
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
-                'X-Recharge-Version' => '2021-11',
+                'X-Recharge-Version' => $this->config['recharge_version'],
             ],
         ]);
 

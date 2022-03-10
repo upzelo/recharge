@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Recharge;
 
-use function array_merge;
-use GuzzleHttp\Client;
-use function is_string;
-use function preg_match;
+use Recharge\Helpers\Util;
 use Recharge\Contracts\RechargeClientInterface;
 use Recharge\Exceptions\InvalidArgumentException;
-use Recharge\Helpers\Util;
+
+use function is_string;
+use function preg_match;
+use function array_merge;
 
 class BaseRechargeClient implements RechargeClientInterface
 {
@@ -53,7 +53,7 @@ class BaseRechargeClient implements RechargeClientInterface
     {
         $baseUrl = $this->getApiBase()->value;
 
-        $requestor = new ApiRequestor($this->getApiKey(), $baseUrl);
+        $requestor = new ApiRequestor($this->getApiKey(), $baseUrl, $this->config);
         $response = $requestor->request($method, $path, $params);
 
         // Fix the api response to make live easier for processing.
