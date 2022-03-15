@@ -17,6 +17,7 @@ class ServiceFactory extends AbstractServiceFactory
         'order' => OrderService::class,
         'plan' => PlanService::class,
         'product' => ProductService::class,
+        'shop' => ShopService::class,
         'subscription' => SubscriptionService::class,
         'webhook' => WebhookService::class,
     ];

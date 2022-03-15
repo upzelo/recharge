@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Recharge\Helpers;
 
 use Recharge\Plan;
+use Recharge\Shop;
 use Recharge\Order;
 use Recharge\Charge;
 use Recharge\Product;
@@ -26,6 +27,7 @@ class ObjectTypes
         Order::OBJECT_NAME => Order::class,
         Plan::OBJECT_NAME => Plan::class,
         Product::OBJECT_NAME => Product::class,
+        Shop::OBJECT_NAME => Shop::class,
         Subscription::OBJECT_NAME => Subscription::class,
         Webhook::OBJECT_NAME => Webhook::class,
     ];

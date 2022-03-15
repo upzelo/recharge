@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Recharge;
 
 use Recharge\Services\PlanService;
+use Recharge\Services\ShopService;
 use Recharge\Services\OrderService;
 use Recharge\Services\ChargeService;
 use Recharge\Services\ServiceFactory;
@@ -23,6 +24,7 @@ use Recharge\Services\SubscriptionService;
  * @property OrderService        $order
  * @property PlanService         $plan
  * @property ProductService      $product
+ * @property ShopService         $shop
  * @property SubscriptionService $subscription
  * @property WebhookService      $webhook
  */
