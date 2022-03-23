@@ -21,8 +21,8 @@ class SubscriptionService extends AbstractService
         return $this->request('get', $this->buildPath('/subscriptions/%s', $id), [], self::OBJECT_TYPE);
     }
 
-    public function cancel($id): Subscription
+    public function cancel($id, $params = []): Subscription
     {
-        return $this->request('post', $this->buildPath('/subscriptions/%s/cancel', $id), [], self::OBJECT_TYPE);
+        return $this->request('post', $this->buildPath('/subscriptions/%s/cancel', $id), $params, self::OBJECT_TYPE);
     }
 }
