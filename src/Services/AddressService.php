@@ -22,6 +22,6 @@ class AddressService extends AbstractService
 
     public function applyDiscount($id, array $params = []): Address
     {
-        return $this->request('post', $this->buildPath('/addresses/%s/apply-discount', $id), $params, self::OBJECT_NAME);
+        return $this->request('post', $this->buildPath('/addresses/%s/apply_discount', $id), $params, self::OBJECT_NAME);
     }
 }
