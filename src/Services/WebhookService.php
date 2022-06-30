@@ -33,6 +33,6 @@ class WebhookService extends AbstractService
 
     public function delete($id): Webhook
     {
-        return $this->request('delete', $this->buildPath('/discounts/%s', $id), [], self::OBJECT_TYPE);
+        return $this->request('delete', $this->buildPath('/webhooks/%s', $id), [], self::OBJECT_TYPE);
     }
 }

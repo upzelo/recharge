@@ -30,4 +30,9 @@ class DiscountService extends AbstractService
     {
         return $this->request('delete', $this->buildPath('/discounts/%s', $id), [], self::OBJECT_TYPE);
     }
+
+    public function update($id, array $params = []): Discount
+    {
+        return $this->request('put', $this->buildPath('/discounts/%s', $id), $params, self::OBJECT_TYPE);
+    }
 }
