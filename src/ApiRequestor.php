@@ -33,6 +33,7 @@ class ApiRequestor
         $response = match ($method) {
             'post' => $this->httpClient()->post($url, ['json' => $params]),
             'put' => $this->httpClient()->put($url, ['json' => $params]),
+            'delete' => $this->httpClient()->delete($url, ['json' => $params]),
             default => $this->httpClient()->get($url, ['query' => $params]),
         };
 
@@ -41,7 +42,7 @@ class ApiRequestor
         return new ApiResponse(
             $response->getHeaders(),
             $body,
-            json_decode($body, true),
+            json_decode($body, true) ?? [],
             $response->getStatusCode()
         );
     }

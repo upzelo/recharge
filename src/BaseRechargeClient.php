@@ -75,7 +75,7 @@ class BaseRechargeClient implements RechargeClientInterface
         $resp['object'] = $isList ? 'list' : $type;
 
         if (!$isList) {
-            $data = $response[$type];
+            $data = $response[$type] ?? [];
 
             return [...$data, ...$resp];
         }
