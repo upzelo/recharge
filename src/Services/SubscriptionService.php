@@ -25,4 +25,10 @@ class SubscriptionService extends AbstractService
     {
         return $this->request('post', $this->buildPath('/subscriptions/%s/cancel', $id), $params, self::OBJECT_TYPE);
     }
+
+    /*https://developer.rechargepayments.com/2021-11/subscriptions/subscriptions_activate*/
+    public function activate($id): Subscription
+    {
+        return $this->request('post', $this->buildPath('/subscriptions/%s/activate', $id), [], self::OBJECT_TYPE);
+    }
 }
