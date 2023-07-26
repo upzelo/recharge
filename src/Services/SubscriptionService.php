@@ -27,8 +27,8 @@ class SubscriptionService extends AbstractService
     }
 
     /*https://developer.rechargepayments.com/2021-11/subscriptions/subscriptions_activate*/
-    public function activate($id): Subscription
+    public function activate($id, $params = []): Subscription
     {
-        return $this->request('post', $this->buildPath('/subscriptions/%s/activate', $id), [], self::OBJECT_TYPE);
+        return $this->request('post', $this->buildPath('/subscriptions/%s/activate', $id), $params, self::OBJECT_TYPE);
     }
 }
