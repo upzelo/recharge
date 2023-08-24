@@ -29,4 +29,14 @@ class ChargeService extends AbstractService
             self::OBJECT_TYPE
         );
     }
+
+    public function unSkip($id, $subscriptionIds): Charge
+    {
+        return $this->request(
+            'post',
+            $this->buildPath('/charges/%s/unskip', $id),
+            ['subscription_ids' => $subscriptionIds],
+            self::OBJECT_TYPE
+        );
+    }
 }
