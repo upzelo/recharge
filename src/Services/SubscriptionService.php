@@ -31,4 +31,10 @@ class SubscriptionService extends AbstractService
     {
         return $this->request('post', $this->buildPath('/subscriptions/%s/activate', $id), $params, self::OBJECT_TYPE);
     }
+
+    /*https://developer.rechargepayments.com/2021-01/subscriptions/subscriptions_change_next_charge*/
+    public function reschedule($id, $params = []): Subscription
+    {
+        return $this->request('post', $this->buildPath('/subscriptions/%s/set_next_charge_date', $id), $params, self::OBJECT_TYPE);
+    }
 }
