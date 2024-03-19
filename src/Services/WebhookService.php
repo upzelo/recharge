@@ -26,6 +26,11 @@ class WebhookService extends AbstractService
         return $this->request('post', '/webhooks', $params, self::OBJECT_TYPE);
     }
 
+    public function update($id, array $params = []): Webhook
+    {
+        return $this->request('put', $this->buildPath('/webhooks/%s', $id), $params, self::OBJECT_TYPE);
+    }
+
     public function retrieve($id): Webhook
     {
         return $this->request('get', $this->buildPath('/webhooks/%s', $id), [], self::OBJECT_TYPE);
